@@ -5,3 +5,5 @@
 
 vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff"
+-- vim.g.snacks_animate = false
+vim.g.lazyvim_cmp = "nvim-cmp"
