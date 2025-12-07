@@ -2,7 +2,17 @@ return {
   "nvim-lspconfig",
   opts = {
     ---@type lspconfig.options
+    inlay_hints = {
+      enabled = false,
+      exclude = {},
+    },
     servers = {
+      tsserver = {
+        handlers = {
+          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "none", silent = true }),
+          ["textDocument/signatureHelp"] = function() end,
+        },
+      },
       pyright = {
         capabilities = (function()
           local capabilities = vim.lsp.protocol.make_client_capabilities()
